@@ -1,0 +1,29 @@
+<ion-view view-title="Inbox">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="subject in chats" type="item-text-wrap" href="#/tab/chats/{{subject.id}}">
+        <img ng-src="{{subject.face}}">
+        <h2>{{subject.title}}</h2>
+        <span class="badge badge-assertive">{{subject.questions.length}}</span>
+        <p>{{subject.questions.length}} question(s)</p>
+        <p>{{subject.lastEdited}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+
+
+        <ion-option-button class="button-assertive" ng-click="remove(subject)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+<!--   <label style="position: fixed; bottom: 49px; width: 100%;" class="item item-input">
+    <input type="text" placeholder="Ask you question">
+  </label> -->
+
+<button style="position: fixed; bottom: 38px;" class="button button-full button-balanced">
+  Ask a question
+</button>
+
+</ion-view>
