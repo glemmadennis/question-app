@@ -107,6 +107,9 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    add: function(data) {
+      subjects.push(data);
     }
   };
 });

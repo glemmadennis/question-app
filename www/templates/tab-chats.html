@@ -1,7 +1,7 @@
 <ion-view view-title="Inbox">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="subject in chats" type="item-text-wrap" href="#/tab/chats/{{subject.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="subject in subjects" type="item-text-wrap" href="#/tab/chats/{{subject.id}}">
         <img ng-src="{{subject.face}}">
         <h2>{{subject.title}}</h2>
         <span class="badge badge-assertive">{{subject.questions.length}}</span>
@@ -15,6 +15,10 @@
           Delete
         </ion-option-button>
       </ion-item>
+
+      <pre>
+        {{subjects}}
+      </pre>
     </ion-list>
   </ion-content>
 
