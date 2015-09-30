@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  $scope.chats = Subjects.all();
+  $scope.subjects = Subjects.all();
 
   $scope.remove = function(subject) {
     Subjects.remove(subject);
@@ -33,10 +33,43 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AddChatController', function($scope, $stateParams, Subjects, $http) {
+
+  // Get all subjects and their questions
   $scope.subjects = Subjects.all();
 
+  // Prepare to receive
   $scope.formData = {};
 
-  
+  $scope.processForm = function() {
+    // Define the new question variable
+    var newQuestion;
+
+    // Adding neccesary data
+    newQuestion = $scope.formData;
+    newQuestion.id = 3;
+
+    var question = $scope.formData.question;
+
+    // the question
+    newQuestion.questions = [{
+      id: '',
+      toWhom: '',
+      question: ''
+    }];
+
+    newQuestion.questions[0].toWhom = $scope.formData.toWhom;
+    newQuestion.questions[0].question = $scope.formData.question;
+    newQuestion.questions[0].id = 5;
+
+    // delete obsolete items
+    delete newQuestion.toWhom;
+    delete newQuestion.question;
+
+    // added the new object to the scope
+    $scope.formData = newQuestion;
+    
+    // added the object through the Subject add method
+    Subjects.add(newQuestion);
+  }
 
 });
