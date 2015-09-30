@@ -1,0 +1,39 @@
+<ion-view view-title="Add question">
+  <ion-content>
+    <ion-list>
+      <form ng-submit="processForm()">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Subject</span>
+          <input type="text" placeholder="Type your subject here" ng-model="formData.title">
+        </label>
+
+        <label class="item item-input item-floating-label">
+          <span class="input-label">To whom</span>
+          <input type="text" placeholder="Who is the question for?" ng-model="formData.toWhom">
+        </label>
+
+        <label class="item item-input item-floating-label">
+          <span class="input-label">You question</span>
+          <textarea rows="5" placeholder="Your question" ng-model="formData.question"></textarea>
+        </label>
+
+        <pre>
+          {{ formData }}
+        </pre>
+
+        <button type="submit" class="button button-full button-balanced">
+          Submit
+        </button>
+      </form>
+    </ion-list>
+  </ion-content>
+
+<!--   <label style="position: fixed; bottom: 49px; width: 100%;" class="item item-input">
+    <input type="text" placeholder="Ask you question">
+  </label> -->
+
+<!-- <button style="position: fixed; bottom: 38px;" class="button button-full button-balanced">
+  Ask a question
+</button> -->
+
+</ion-view>

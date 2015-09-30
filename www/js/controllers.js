@@ -16,6 +16,10 @@ angular.module('starter.controllers', [])
   $scope.remove = function(subject) {
     Subjects.remove(subject);
   };
+
+  $scope.askAQuestion = function() {
+    
+  }
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Subjects) {
@@ -26,4 +30,13 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+
+.controller('AddChatController', function($scope, $stateParams, Subjects, $http) {
+  $scope.subjects = Subjects.all();
+
+  $scope.formData = {};
+
+  
+
 });
